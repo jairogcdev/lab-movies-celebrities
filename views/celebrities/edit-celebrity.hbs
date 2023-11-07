@@ -1,0 +1,36 @@
+<div class="d-flex flex-column align-items-center">
+  <h3>Formulario para editar celebrities</h3>
+
+  <form method="post" action="/celebrities/{{oneCelebrity._id}}">
+    <div class="mb-3">
+      <label class="form-label" for="name">Nombre</label>
+      <input
+        class="form-control"
+        type="text"
+        name="name"
+        value="{{oneCelebrity.name}}"
+      />
+    </div>
+    <div class="mb-3">
+      <label class="form-label" for="ocupation">Ocupación</label>
+      <input
+        class="form-control"
+        type="text"
+        name="ocupation"
+        value="{{oneCelebrity.ocupation}}"
+      />
+    </div>
+    <div class="mb-3">
+      <label class="form-label" for="catchPhrase">Eslogan</label>
+      <input
+        class="form-control"
+        type="text"
+        name="catchPhrase"
+        value="{{oneCelebrity.catchPhrase}}"
+      />
+    </div>
+    <div class="d-grid gap-2">
+      <button type="submit" class="btn btn-success">Editar</button>
+    </div>
+  </form>
+</div>

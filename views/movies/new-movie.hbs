@@ -1,0 +1,29 @@
+<div class="d-flex flex-column align-items-center">
+  <h3>Formulario para crear peliculas</h3>
+
+  <form method="post" action="/movies/create">
+    <div class="mb-3">
+      <label class="form-label" for="title">Titulo</label>
+      <input class="form-control" type="text" name="title" />
+    </div>
+    <div class="mb-3">
+      <label class="form-label" for="genre">Género</label>
+      <input class="form-control" type="text" name="genre" />
+    </div>
+    <div class="mb-3">
+      <label class="form-label" for="plot">Argumento</label>
+      <input class="form-control" type="text" name="plot" />
+    </div>
+    <div class="mb-3">
+      <label class="form-label" for="cast">Reparto</label>
+      <select class="form-select" name="cast" multiple>
+        {{#each allCelebrities}}
+          <option value="{{this._id}}">{{this.name}}</option>
+        {{/each}}
+      </select>
+    </div>
+    <div class="d-grid gap-2">
+      <button type="submit" class="btn btn-primary">Agregar</button>
+    </div>
+  </form>
+</div>

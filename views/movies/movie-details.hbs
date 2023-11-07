@@ -1,0 +1,22 @@
+<div class="d-flex flex-column align-items-center">
+  <h2>Detalles de la película {{oneMovie.title}}</h2>
+  <h4>Género : {{oneMovie.genre}}</h4>
+  <p class="d-flex flex-column">{{oneMovie.plot}}</p>
+  <h3>Reparto :</h3>
+  {{#each oneMovie.cast}}
+    <p class="d-flex flex-column">{{this.name}}
+      -
+      {{this.ocupation}}
+      -
+      {{this.catchPhrase}}</p>
+  {{/each}}
+
+  <form
+    class="d-flex flex-column align-items-center"
+    action="/movies/{{oneMovie._id}}/delete"
+  >
+    <button type="submit" class="btn btn-danger">Borrar Pelicula</button>
+  </form>
+  <a class="btn btn-success" href="/movies/{{oneMovie._id}}/edit">Editar
+    Pelicula</a>
+</div>

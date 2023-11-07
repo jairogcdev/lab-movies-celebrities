@@ -1,0 +1,16 @@
+<div class="d-flex flex-column align-items-center">
+  <h2>Detalles de la celebrity {{oneCelebrity.name}}</h2>
+  <h4>Ocupación : {{oneCelebrity.ocupation}}</h4>
+  <p class="d-flex flex-column">Eslogan : {{oneCelebrity.catchPhrase}}</p>
+
+  <form
+    class="d-flex flex-column align-items-center"
+    action="/celebrities/{{oneCelebrity._id}}/delete"
+  >
+    <button type="submit" class="btn btn-danger">Borrar Celebrity</button>
+  </form>
+  <a
+    class="btn btn-success"
+    href="/celebrities/{{oneCelebrity._id}}/edit"
+  >Editar Celebrity</a>
+</div>
