@@ -53,21 +53,15 @@ router.get("/movies/:id/edit", async (req, res, next) => {
   try {
     const oneMovie = await Movie.findById(req.params.id).populate("cast");
     const allCelebrities = await Celebrity.find();
-    // const celebritiesInMovie = oneMovie.cast;
-    // let isSelected = [];
-    // for (let i = 0; i < allCelebrities.length; i++) {
-    //   if (
-    //     celebritiesInMovie.find((object) => object.id === allCelebrities[i].id)
-    //   ) {
-    //     isSelected.push("selected");
-    //   } else {
-    //     isSelected.push("");
-    //   }
-    // }
+    allCelebrities.forEach((eachCelebrity) => {
+      if (oneMovie.cast.find((object) => object.id === eachCelebrity.id)) {
+        eachCelebrity.inCast = true;
+      }
+    });
+
     res.render("movies/edit-movie", {
       oneMovie,
       allCelebrities,
-      //   isSelected,
     });
   } catch (error) {
     next(error);

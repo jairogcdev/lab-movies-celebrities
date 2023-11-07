@@ -33,7 +33,11 @@
       <label class="form-label" for="cast">Reparto</label>
       <select class="form-select" name="cast" multiple>
         {{#each allCelebrities}}
-          <option value="{{this._id}}">{{this.name}}</option>
+          {{#if inCast}}
+            <option value="{{this._id}}" selected>{{this.name}}</option>
+          {{else}}
+            <option value="{{this._id}}">{{this.name}}</option>
+          {{/if}}
         {{/each}}
       </select>
     </div>
